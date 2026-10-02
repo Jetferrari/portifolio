@@ -47,8 +47,8 @@ Product
 
 ## Selected Projects
 
-* Pulso
-* ArcanoZero
+* Pulsar
+* RestaurantZero
 
 Public case studies:
 
