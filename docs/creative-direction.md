@@ -130,7 +130,7 @@ Base tones:
 * ink grey
 * muted sepia
 
-### Pulso
+### Pulsar
 
 Suggested family:
 
@@ -140,9 +140,9 @@ Suggested family:
 * diluted blue grey
 * restrained violet
 
-Pulso should feel analytical and cerebral.
+Pulsar should feel analytical and cerebral.
 
-### ArcanoZero
+### RestaurantZero
 
 Suggested family:
 
@@ -152,7 +152,7 @@ Suggested family:
 * warm brown
 * restrained amber
 
-ArcanoZero should feel more tangible and operational.
+RestaurantZero should feel more tangible and operational.
 
 ## Typography
 
@@ -317,7 +317,7 @@ Move from specification to prototype, then from prototype to validated system th
 
 Projects should emerge from the visual language of the page instead of appearing as generic cards.
 
-### Pulso
+### Pulsar
 
 Creative metaphor:
 
@@ -335,7 +335,7 @@ Possible visual behavior:
 
 The public site must not expose internal prompts, schemas, datasets, financial rules or proprietary implementation.
 
-### ArcanoZero
+### RestaurantZero
 
 Creative metaphor:
 
@@ -523,11 +523,11 @@ Curiosity
 
 Calm
 
-### Pulso
+### Pulsar
 
 Intellectual tension
 
-### ArcanoZero
+### RestaurantZero
 
 Operational clarity
 
@@ -580,8 +580,8 @@ Before implementation, generate five static concept frames:
 
 1. Hero, ambient state
 2. Hero, structured interaction state
-3. Pulso
-4. ArcanoZero
+3. Pulsar
+4. RestaurantZero
 5. Process
 
 Only after those frames are approved should the final Astra implementation brief be written.
