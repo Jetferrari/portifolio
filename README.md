@@ -52,8 +52,8 @@ Product
 
 Public case studies:
 
-* https://github.com/Jetferrari/pulso-case-study
-* https://github.com/Jetferrari/arcanozero-case-study
+* [Pulsar case study](https://github.com/Jetferrari/pulso-case-study)
+* [RestaurantZero case study](https://github.com/Jetferrari/arcanozero-case-study)
 
 ## Creative Direction
 
