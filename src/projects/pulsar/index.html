@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031b1a">
+  <meta name="description" content="Estudo de caso do Pulsar: inteligência de decisão financeira que conjuga núcleo determinístico e síntese analítica por IA." data-i18n-desc="pulsarMetaDesc">
+  <title data-i18n-title="pulsarPageTitle">Pulsar — Financial Decision Intelligence | Jeterson Ferrari</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23051f1e'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23b4e9dc'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-body">
+  <!-- Top Left Home Control -->
+  <a href="/" class="home-glyph-link" aria-label="Ir para a página inicial (Rede Sináptica)" data-i18n-attr="aria-label:homeGlyphAria">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <circle cx="19" cy="5" r="2"/>
+      <circle cx="5" cy="5" r="2"/>
+      <circle cx="5" cy="19" r="2"/>
+      <circle cx="19" cy="19" r="2"/>
+      <path d="M7 6h10M7 18h10M5 7v10M19 7v10"/>
+    </svg>
+  </a>
+  <!-- Top Floating Controls: [ language control ] [ hamburger ] -->
+  <div class="top-controls">
+    <div class="lang-selector" id="langSelector">
+      <button class="lang-toggle" id="langToggle" aria-label="Alterar idioma" aria-expanded="false" aria-controls="langMenu" data-i18n-attr="aria-label:langToggleAria">
+        <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-current" id="langCurrent">PT</span>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma">
+        <button class="lang-option active" data-lang="pt" role="menuitem" type="button">PT</button>
+        <button class="lang-option" data-lang="en" role="menuitem" type="button">EN</button>
+        <button class="lang-option" data-lang="es" role="menuitem" type="button">ES</button>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navDrawer" data-i18n-attr="aria-label:navToggleAria">
+      <span class="hamburger-box" aria-hidden="true">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </span>
+    </button>
+  </div>
+  <!-- Navigation Drawer & Backdrop -->
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-title" data-i18n="drawerTitle">Navegação</span>
+      <button class="drawer-close" id="navClose" aria-label="Fechar menu" data-i18n-attr="aria-label:navCloseAria">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="/" class="drawer-link " data-i18n="navHome">Home</a>
+      <a href="/profile" class="drawer-link " data-i18n="navProfile">Perfil</a>
+      <div class="drawer-group">
+        <span class="drawer-group-label" data-i18n="navProjects">Projetos</span>
+        <a href="/projects/pulsar" class="drawer-sublink active">Pulsar</a>
+        <a href="/projects/restaurantzero" class="drawer-sublink ">RestaurantZero</a>
+      </div>
+      <a href="/process" class="drawer-link " data-i18n="navProcess">Processo</a>
+      <a href="/contact" class="drawer-link " data-i18n="navContact">Contato</a>
+    </nav>
+    <div class="drawer-footer">
+      <p class="drawer-role">AI-Directed Product Builder</p>
+    </div>
+  </aside>
+  <main class="page-main">
+    <div class="portfolio-container case-study-container">
+
+      <!-- Case Study Header -->
+      <section class="case-study-hero">
+        <div class="section-badge"><span class="badge-num" data-i18n="pulsarBadge">CASE STUDY / PULSAR</span></div>
+        <div class="project-title-row">
+          <h1 class="project-headline">Pulsar</h1>
+          <a href="https://github.com/Jetferrari/pulsar-case-study" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Abrir estudo de caso do Pulsar no GitHub" data-i18n-attr="aria-label:pulsarCaseStudyLinkAria">
+            <span>GitHub Case Study</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        <p class="project-subhead">Financial Decision Intelligence</p>
+        <p class="project-intro-lead" data-i18n="pulsarIntroLead">
+          Um projeto criado para explorar como software determinístico e inteligência artificial podem coexistir dentro de limites claros.
+        </p>
+
+        <div class="role-banner">
+          <span class="role-badge" data-i18n="pulsarRoleBadge">Minha Atuação Direta</span>
+          <p data-i18n="pulsarRoleText">
+            Minha contribuição no Pulsar está na concepção do produto, definição do problema, desenho do resultado esperado, planejamento da solução com IA, definição de restrições, coordenação dos agentes e validação do comportamento final. A implementação técnica é executada por agentes de código.
+          </p>
+        </div>
+
+        <!-- Primary Cover Visual (Hero Image) -->
+        <figure class="case-study-figure main-cover-figure">
+          <div class="image-wrapper">
+            <img src="/assets/projects/pulsar/pulsar-cover.png" alt="Visão conceitual do sistema Pulsar" class="concept-visual-img" loading="eager" data-i18n-attr="alt:pulsarCoverImgAlt">
+          </div>
+          <figcaption class="concept-caption">
+            <span class="concept-tag">Concept UI</span>
+            <span class="caption-text" data-i18n="pulsarCoverCaption">Visão conceitual da arquitetura analítica do Pulsar.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Product Principles -->
+      <section class="case-study-section" id="principles">
+        <h2 class="section-title" data-i18n="pulsarPrinciplesTitle">Princípios do Sistema</h2>
+        <p class="section-lead" data-i18n="pulsarPrinciplesLead">
+          Fronteiras arquiteturais explícitas que asseguram consistência determinística e uso governado de modelos de linguagem.
+        </p>
+
+        <div class="themes-grid">
+          <div class="theme-card">
+            <h3>Deterministic Core</h3>
+            <p data-i18n="pulsarPrincipleCoreDesc">Operações críticas permanecem fora da inferência probabilística e seguem regras verificáveis.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>Structured AI Outputs</h3>
+            <p data-i18n="pulsarPrincipleOutputsDesc">Saídas de modelos são estruturadas antes de serem consumidas por partes críticas do sistema.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>Domain Modeling</h3>
+            <p data-i18n="pulsarPrincipleDomainDesc">O domínio é organizado em torno das regras do produto, com separação clara entre responsabilidades.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>LLM Evaluation</h3>
+            <p data-i18n="pulsarPrincipleLlmDesc">Agentes e avaliações automatizadas verificam comportamento, consistência e possíveis regressões.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>Architecture Governance</h3>
+            <p data-i18n="pulsarPrincipleGovDesc">Regras arquiteturais são definidas antes da implementação e usadas como restrições durante o trabalho dos agentes.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>AI-Directed Development</h3>
+            <p data-i18n="pulsarPrincipleDevDesc">A implementação é conduzida por agentes de IA a partir de especificações, restrições, testes e critérios definidos ao longo do processo.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Supporting Visual 1: Dashboard -->
+      <section class="case-study-section" id="dashboard-concept">
+        <h2 class="section-title" data-i18n="pulsarAnalyticsTitle">Experiência Analítica</h2>
+        <p class="section-lead" data-i18n="pulsarAnalyticsLead">
+          Painel de consolidação para inteligência de dados financeiros, projetado para clareza visual e separação de métricas.
+        </p>
+
+        <figure class="case-study-figure">
+          <div class="image-wrapper">
+            <img src="/assets/projects/pulsar/pulsar-dashboard.png" alt="Dashboard analítico conceitual planejado para o Pulsar" class="concept-visual-img" loading="lazy" data-i18n-attr="alt:pulsarDashboardImgAlt">
+          </div>
+          <figcaption class="concept-caption">
+            <span class="concept-tag">Concept UI</span>
+            <span class="caption-text" data-i18n="pulsarDashboardCaption">Exploração visual da experiência analítica planejada para o Pulsar.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Supporting Visual 2: Decision Analysis -->
+      <section class="case-study-section" id="decision-analysis-concept">
+        <h2 class="section-title" data-i18n="pulsarDecisionTitle">Análise & Decisão</h2>
+        <p class="section-lead" data-i18n="pulsarDecisionLead">
+          Mecanismo estruturado de decisão que conjuga regras determinísticas e síntese analítica por IA sob supervisão.
+        </p>
+
+        <figure class="case-study-figure">
+          <div class="image-wrapper">
+            <img src="/assets/projects/pulsar/pulsar-decision-analysis.png" alt="Tela de análise e decisão planejada para o Pulsar" class="concept-visual-img" loading="lazy" data-i18n-attr="alt:pulsarDecisionImgAlt">
+          </div>
+          <figcaption class="concept-caption">
+            <span class="concept-tag">Concept UI</span>
+            <span class="caption-text" data-i18n="pulsarDecisionCaption">Exploração visual da experiência de análise e decisão planejada para o Pulsar.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Technologies Present -->
+      <section class="case-study-section" id="project-tech">
+        <h2 class="section-title" data-i18n="pulsarTechTitle">Tecnologias Presentes no Projeto</h2>
+        <p class="tech-clarification" data-i18n="pulsarTechClarification">
+          Tecnologias presentes na base técnica do Pulsar, especificadas no planejamento e implementadas através de agentes de código:
+        </p>
+        <div class="pills-wrap">
+          <span class="stack-pill">TypeScript</span>
+          <span class="stack-pill">React</span>
+          <span class="stack-pill">Node.js</span>
+          <span class="stack-pill">REST APIs</span>
+          <span class="stack-pill">Zod</span>
+          <span class="stack-pill">PostgreSQL</span>
+          <span class="stack-pill">Structured Outputs</span>
+          <span class="stack-pill">LLM Evaluation</span>
+          <span class="stack-pill">Guardrails</span>
+        </div>
+      </section>
+
+      <!-- Next Project & Return Nav -->
+      <section class="case-study-footer-nav">
+        <div class="cross-nav-box">
+          <a href="/projects/restaurantzero" class="cross-nav-link next">
+            <span class="nav-sub" data-i18n="pulsarNextProjectLabel">Próximo Projeto</span>
+            <span class="nav-title">RestaurantZero &rarr;</span>
+          </a>
+        </div>
+      </section>
+
+  <footer class="portfolio-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Jeterson Ferrari • AI-Directed Product Builder</p>
+      <a href="/" class="footer-back-link" aria-label="Retornar à página inicial (Rede Sináptica)" data-i18n-attr="aria-label:footerBackToHubAria">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 6h10M7 18h10M5 7v10M19 7v10"/></svg>
+        <span data-i18n="footerBackToHub">Voltar ao hub</span>
+      </a>
+    </div>
+  </footer>
+    </div>
+  </main>
+
+  <script src="/i18n.js"></script>
+  <script src="/nav.js"></script>
+</body>
+</html>

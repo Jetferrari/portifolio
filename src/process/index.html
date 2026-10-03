@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031b1a">
+  <meta name="description" content="Como Jeterson Ferrari constrói software: metodologia AI-directed, resolução de problemas, princípios de arquitetura e workflow de agentes." data-i18n-desc="processMetaDesc">
+  <title data-i18n-title="processPageTitle">Process — Como eu trabalho | Jeterson Ferrari</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23051f1e'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23b4e9dc'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-body">
+  <!-- Top Left Home Control -->
+  <a href="/" class="home-glyph-link" aria-label="Ir para a página inicial (Rede Sináptica)" data-i18n-attr="aria-label:homeGlyphAria">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <circle cx="19" cy="5" r="2"/>
+      <circle cx="5" cy="5" r="2"/>
+      <circle cx="5" cy="19" r="2"/>
+      <circle cx="19" cy="19" r="2"/>
+      <path d="M7 6h10M7 18h10M5 7v10M19 7v10"/>
+    </svg>
+  </a>
+  <!-- Top Floating Controls: [ language control ] [ hamburger ] -->
+  <div class="top-controls">
+    <div class="lang-selector" id="langSelector">
+      <button class="lang-toggle" id="langToggle" aria-label="Alterar idioma" aria-expanded="false" aria-controls="langMenu" data-i18n-attr="aria-label:langToggleAria">
+        <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-current" id="langCurrent">PT</span>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma">
+        <button class="lang-option active" data-lang="pt" role="menuitem" type="button">PT</button>
+        <button class="lang-option" data-lang="en" role="menuitem" type="button">EN</button>
+        <button class="lang-option" data-lang="es" role="menuitem" type="button">ES</button>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navDrawer" data-i18n-attr="aria-label:navToggleAria">
+      <span class="hamburger-box" aria-hidden="true">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </span>
+    </button>
+  </div>
+  <!-- Navigation Drawer & Backdrop -->
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-title" data-i18n="drawerTitle">Navegação</span>
+      <button class="drawer-close" id="navClose" aria-label="Fechar menu" data-i18n-attr="aria-label:navCloseAria">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="/" class="drawer-link " data-i18n="navHome">Home</a>
+      <a href="/profile" class="drawer-link " data-i18n="navProfile">Perfil</a>
+      <div class="drawer-group">
+        <span class="drawer-group-label" data-i18n="navProjects">Projetos</span>
+        <a href="/projects/pulsar" class="drawer-sublink ">Pulsar</a>
+        <a href="/projects/restaurantzero" class="drawer-sublink ">RestaurantZero</a>
+      </div>
+      <a href="/process" class="drawer-link active" data-i18n="navProcess">Processo</a>
+      <a href="/contact" class="drawer-link " data-i18n="navContact">Contato</a>
+    </nav>
+    <div class="drawer-footer">
+      <p class="drawer-role">AI-Directed Product Builder</p>
+    </div>
+  </aside>
+  <main class="page-main">
+    <div class="portfolio-container">
+
+      <!-- AI-Directed Workflow (Process) -->
+      <section class="portfolio-section" id="process" aria-labelledby="heading-process">
+        <div class="section-badge"><span class="badge-num" data-i18n="processWorkflowBadge">01 / FLUXO DE TRABALHO</span></div>
+        <h1 id="heading-process" class="section-title" data-i18n="processWorkflowTitle">Como eu trabalho</h1>
+        <p class="section-lead" data-i18n="processWorkflowLead">
+          Meu processo começa antes de qualquer código ser produzido. A implementação é apenas uma etapa dentro de um sistema maior de pesquisa, planejamento, direção, revisão por IA e validação.
+        </p>
+
+        <div class="timeline-sequence">
+          <div class="timeline-step">
+            <span class="step-num">01</span>
+            <div class="step-content">
+              <h3>Research</h3>
+              <p data-i18n="processStep1Desc">Faço uma pesquisa ampla sobre o produto, o problema, o mercado, o público e as soluções existentes antes de definir a direção.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">02</span>
+            <div class="step-content">
+              <h3>Specialized Context</h3>
+              <p data-i18n="processStep2Desc">Crio um contexto especializado no assunto para concentrar pesquisa, raciocínio, decisões, restrições e referências relevantes para o projeto.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">03</span>
+            <div class="step-content">
+              <h3>Problem Definition</h3>
+              <p data-i18n="processStep3Desc">Defino o problema a resolver, para quem ele existe, quais restrições importam e qual resultado final deve ser alcançado.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">04</span>
+            <div class="step-content">
+              <h3>System Planning</h3>
+              <p data-i18n="processStep4Desc">Planejo com IA a arquitetura de alto nível, tecnologias, módulos, limites, dependências e sequência de desenvolvimento.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">05</span>
+            <div class="step-content">
+              <h3>Agent Design</h3>
+              <p data-i18n="processStep5Desc">Crio um agente especializado para o projeto, com contexto, regras, arquitetura, objetivos e critérios de validação próprios.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">06</span>
+            <div class="step-content">
+              <h3>Prompt Orchestration</h3>
+              <p data-i18n="processStep6Desc">O agente supervisor transforma o plano em instruções específicas para os agentes de código e analisa o retorno de cada etapa.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">07</span>
+            <div class="step-content">
+              <h3>Implementation</h3>
+              <p data-i18n="processStep7Desc">Antigravity, Codex, Claude Code, Lovable ou Google AI Studio executam a implementação técnica.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">08</span>
+            <div class="step-content">
+              <h3>Cross-Review</h3>
+              <p data-i18n="processStep8Desc">Sempre que necessário, utilizo uma IA diferente para revisar o trabalho produzido por outra, reduzindo dependência de um único modelo.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">09</span>
+            <div class="step-content">
+              <h3>Automated Testing</h3>
+              <p data-i18n="processStep9Desc">Os agentes executam testes e verificações definidos para cada módulo antes de avançar.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">10</span>
+            <div class="step-content">
+              <h3>Result Validation</h3>
+              <p data-i18n="processStep10Desc">Eu verifico se comportamento, interface, fluxos e resultados correspondem ao que foi planejado. Não aprovo código pela leitura linha por linha.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <span class="step-num">11</span>
+            <div class="step-content">
+              <h3>Iteration</h3>
+              <p data-i18n="processStep11Desc">Quando algo diverge do objetivo, retorno o resultado ao sistema de IA para investigação, correção, novos testes e nova validação.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problem Solving Anchor -->
+      <section class="portfolio-section" id="problem-solving" aria-labelledby="heading-problem-solving">
+        <div class="section-badge"><span class="badge-num" data-i18n="processProblemSolvingBadge">02 / PROBLEM SOLVING</span></div>
+        <h2 id="heading-problem-solving" class="section-title">Problem Solving</h2>
+        <p class="section-lead" data-i18n="processProblemSolvingLead">
+          Meu principal trabalho não é escrever código. É transformar problemas vagos em problemas solucionáveis e resultados verificáveis.
+        </p>
+
+        <div class="methodology-flow">
+          <div class="method-card">
+            <span class="method-index">1</span>
+            <h3 data-i18n="processMethod1Title">Entender o problema real</h3>
+            <p data-i18n="processMethod1Desc">Separar a necessidade central de sintomas, suposições e soluções prematuras.</p>
+          </div>
+
+          <div class="method-card">
+            <span class="method-index">2</span>
+            <h3 data-i18n="processMethod2Title">Definir o resultado</h3>
+            <p data-i18n="processMethod2Desc">Determinar como deve se comportar o produto quando o problema estiver efetivamente resolvido.</p>
+          </div>
+
+          <div class="method-card">
+            <span class="method-index">3</span>
+            <h3 data-i18n="processMethod3Title">Mapear restrições</h3>
+            <p data-i18n="processMethod3Desc">Identificar recursos, limites, requisitos, dependências e condições que a solução precisa respeitar.</p>
+          </div>
+
+          <div class="method-card">
+            <span class="method-index">4</span>
+            <h3 data-i18n="processMethod4Title">Explorar alternativas com IA</h3>
+            <p data-i18n="processMethod4Desc">Usar pesquisa, comparação e debate com modelos para avaliar caminhos possíveis antes da implementação.</p>
+          </div>
+
+          <div class="method-card">
+            <span class="method-index">5</span>
+            <h3 data-i18n="processMethod5Title">Planejar antes de executar</h3>
+            <p data-i18n="processMethod5Desc">Criar contexto, estrutura, regras e critérios suficientes para reduzir improvisação durante o desenvolvimento.</p>
+          </div>
+
+          <div class="method-card">
+            <span class="method-index">6</span>
+            <h3 data-i18n="processMethod6Title">Construir e testar</h3>
+            <p data-i18n="processMethod6Desc">Delegar a execução técnica aos agentes e exigir verificações progressivas antes de avançar.</p>
+          </div>
+
+          <div class="method-card">
+            <span class="method-index">7</span>
+            <h3 data-i18n="processMethod7Title">Refinar</h3>
+            <p data-i18n="processMethod7Desc">Corrigir o que diverge do objetivo até que comportamento e experiência estejam de acordo com o planejado.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Architecture Anchor -->
+      <section class="portfolio-section" id="architecture" aria-labelledby="heading-architecture">
+        <div class="section-badge"><span class="badge-num" data-i18n="processArchBadge">03 / PRINCÍPIOS DE ARQUITETURA</span></div>
+        <h2 id="heading-architecture" class="section-title" data-i18n="processArchTitle">Princípios usados nos projetos</h2>
+        
+        <div class="architecture-notice">
+          <p data-i18n="processArchNotice">
+            Não implemento esses padrões manualmente. Eles são utilizados como princípios e restrições durante o planejamento dos projetos. O detalhamento técnico, a implementação e a verificação ficam a cargo de agentes de IA.
+          </p>
+        </div>
+
+        <div class="practices-grid">
+          <div class="practice-item">
+            <h3>Domain Driven Design</h3>
+            <p data-i18n="processPracticeDddDesc">Usado para organizar o sistema em torno do domínio e das regras do produto.</p>
+          </div>
+
+          <div class="practice-item">
+            <h3>Hexagonal Architecture</h3>
+            <p data-i18n="processPracticeHexDesc">Usada para separar responsabilidades e reduzir dependência entre domínio, infraestrutura e interfaces externas.</p>
+          </div>
+
+          <div class="practice-item">
+            <h3>Ports and Adapters</h3>
+            <p data-i18n="processPracticePortsDesc">Usado como referência para definir contratos claros entre módulos e integrações.</p>
+          </div>
+
+          <div class="practice-item">
+            <h3>Explicit Boundaries</h3>
+            <p data-i18n="processPracticeBoundariesDesc">Fronteiras intencionais entre módulos ajudam os agentes a manter responsabilidades separadas.</p>
+          </div>
+
+          <div class="practice-item">
+            <h3>Contract Validation</h3>
+            <p data-i18n="processPracticeContractDesc">Entradas e saídas são definidas com contratos que podem ser validados automaticamente.</p>
+          </div>
+
+          <div class="practice-item">
+            <h3>Architecture Fitness</h3>
+            <p data-i18n="processPracticeFitnessDesc">Verificações automatizadas podem ser usadas para avaliar se a implementação continua aderente às regras estruturais planejadas.</p>
+          </div>
+
+          <div class="practice-item">
+            <h3>Idempotency</h3>
+            <p data-i18n="processPracticeIdempotencyDesc">Operações sensíveis podem ser planejadas para tolerar repetições sem produzir efeitos duplicados.</p>
+          </div>
+
+          <div class="practice-item">
+            <h3>Security Boundaries</h3>
+            <p data-i18n="processPracticeSecurityDesc">Fronteiras de confiança, validação de entrada e tratamento de segredos entram como restrições desde o planejamento.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AI Workflow Anchor -->
+      <section class="portfolio-section" id="ai-workflow" aria-labelledby="heading-ai-workflow">
+        <div class="section-badge"><span class="badge-num">04</span> / AI WORKFLOW</div>
+        <h2 id="heading-ai-workflow" class="section-title" data-i18n="processWorkflowHeading">Todo código é produzido por agentes de IA</h2>
+        <div class="philosophy-box">
+          <p class="philosophy-text" data-i18n="processPhilosophyText">
+            Não escrevo código manualmente, não faço revisão linha por linha e não utilizo VS Code ou outro editor tradicional como ferramenta central de desenvolvimento. Minha função é dirigir o sistema que produz o software.
+          </p>
+        </div>
+
+        <div class="workflow-pillars">
+          <div class="workflow-pillar-card full-width">
+            <h3 data-i18n="processValidationCardTitle">Minha validação é orientada pelo resultado</h3>
+            <p data-i18n="processValidationCardP1">
+              Não determino que um trecho está correto porque consigo interpretar cada linha de código. Considero uma etapa aprovada quando o software apresenta o comportamento planejado, passa pelas verificações definidas para aquela fase e entrega o resultado esperado.
+            </p>
+            <p class="pillar-sub" data-i18n="processValidationCardP2">
+              Tenho especial foco em engenharia de prompts, contexto e coordenação de agentes, buscando reduzir ambiguidades, retrabalho, erros e alucinações durante a execução.
+            </p>
+          </div>
+        </div>
+
+        <div class="ai-skills-block" style="margin-top: 24px;">
+          <div class="pills-wrap">
+            <span class="skill-pill">Prompt Engineering</span>
+            <span class="skill-pill">Context Design</span>
+            <span class="skill-pill">Agent Orchestration</span>
+            <span class="skill-pill">Task Decomposition</span>
+            <span class="skill-pill">Cross-Model Review</span>
+            <span class="skill-pill">Automated Testing</span>
+            <span class="skill-pill">LLM Evaluation</span>
+            <span class="skill-pill">Structured Outputs</span>
+            <span class="skill-pill">Guardrails</span>
+          </div>
+        </div>
+      </section>
+
+  <footer class="portfolio-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Jeterson Ferrari • AI-Directed Product Builder</p>
+      <a href="/" class="footer-back-link" aria-label="Retornar à página inicial (Rede Sináptica)" data-i18n-attr="aria-label:footerBackToHubAria">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 6h10M7 18h10M5 7v10M19 7v10"/></svg>
+        <span data-i18n="footerBackToHub">Voltar ao hub</span>
+      </a>
+    </div>
+  </footer>
+    </div>
+  </main>
+
+  <script src="/i18n.js"></script>
+  <script src="/nav.js"></script>
+</body>
+</html>

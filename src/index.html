@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031b1a">
+  <meta name="description" content="Portfólio de Jeterson Ferrari, AI-Directed Product Builder. Mapa de navegação visual conduzido por rede neural sináptica." data-i18n-desc="homeMetaDesc">
+  <title data-i18n-title="homePageTitle">Jeterson Ferrari — AI-Directed Product Builder</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23051f1e'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23b4e9dc'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="home-body">
+  <!-- Top Floating Controls: [ language control ] [ hamburger ] -->
+  <div class="top-controls">
+    <div class="lang-selector" id="langSelector">
+      <button class="lang-toggle" id="langToggle" aria-label="Alterar idioma" aria-expanded="false" aria-controls="langMenu" data-i18n-attr="aria-label:langToggleAria">
+        <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-current" id="langCurrent">PT</span>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma">
+        <button class="lang-option active" data-lang="pt" role="menuitem" type="button">PT</button>
+        <button class="lang-option" data-lang="en" role="menuitem" type="button">EN</button>
+        <button class="lang-option" data-lang="es" role="menuitem" type="button">ES</button>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navDrawer" data-i18n-attr="aria-label:navToggleAria">
+      <span class="hamburger-box" aria-hidden="true">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </span>
+    </button>
+  </div>
+  <!-- Navigation Drawer & Backdrop -->
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-title" data-i18n="drawerTitle">Navegação</span>
+      <button class="drawer-close" id="navClose" aria-label="Fechar menu" data-i18n-attr="aria-label:navCloseAria">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="/" class="drawer-link active" data-i18n="navHome">Home</a>
+      <a href="/profile" class="drawer-link " data-i18n="navProfile">Perfil</a>
+      <div class="drawer-group">
+        <span class="drawer-group-label" data-i18n="navProjects">Projetos</span>
+        <a href="/projects/pulsar" class="drawer-sublink ">Pulsar</a>
+        <a href="/projects/restaurantzero" class="drawer-sublink ">RestaurantZero</a>
+      </div>
+      <a href="/process" class="drawer-link " data-i18n="navProcess">Processo</a>
+      <a href="/contact" class="drawer-link " data-i18n="navContact">Contato</a>
+    </nav>
+    <div class="drawer-footer">
+      <p class="drawer-role">AI-Directed Product Builder</p>
+    </div>
+  </aside>
+  <main class="home-main">
+    <section class="hero-stage home-stage" aria-label="Rede neural interativa de navegação profissional" data-i18n-attr="aria-label:homeHeroStageAria">
+      <div class="scene" id="scene">
+        <img src="/network.png" alt="Núcleo central de IA conectado a dez nodos circulares minimalistas em uma rede verde-petróleo" draggable="false">
+        <div class="breath"></div>
+        <svg id="network" viewBox="0 0 1672 941" aria-label="Mapa interativo dos dez eixos profissionais de Jeterson Ferrari" data-i18n-attr="aria-label:homeNetworkSvgAria">
+          <defs>
+            <filter id="soft" x="-150%" y="-150%" width="400%" height="400%">
+              <feGaussianBlur stdDeviation="4"/>
+            </filter>
+          </defs>
+          <g id="paths"></g>
+          <g id="signals" aria-hidden="true"></g>
+          <g id="nodes"></g>
+          <rect id="core" class="hit core-hit" x="744" y="358" width="184" height="190" rx="70" tabindex="0" role="button" aria-label="Ativar pulso do núcleo de IA" data-i18n-attr="aria-label:homeCoreAria"/>
+        </svg>
+      </div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <div class="home-navigation-hint" aria-hidden="true">
+        <span class="hint-label" data-i18n="homeHint">Selecione um módulo para navegar pelo portfólio</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="/i18n.js"></script>
+  <script src="/app.js"></script>
+  <script src="/nav.js"></script>
+</body>
+</html>

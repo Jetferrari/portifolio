@@ -1,93 +1,120 @@
-# JET FERRARI Portfolio
+# Jeterson Ferrari — AI-Directed Product Builder
 
-Public portfolio project for Jeterson Ferrari.
+Public source repository for Jeterson Ferrari's professional portfolio.
 
-This repository will contain the design system, experience architecture and implementation of a creative professional portfolio focused on AI assisted product engineering, creative problem solving, rapid prototyping and systems thinking.
+The portfolio presents an AI-native product development workflow centered on problem definition, product thinking, high-level architecture planning, prompt engineering, agent orchestration, and result validation.
 
-## Current Phase
+## Portfolio experience
 
-The project is currently in visual and experience planning.
+The interface is built around a Synaptic navigation hub that connects the main areas of the portfolio:
 
-Implementation should begin only after the visual direction, interaction model and key concept frames are approved.
+- Profile
+- Tools & Technologies
+- Languages
+- AI Workflow
+- Process
+- Architecture
+- Problem Solving
+- Pulsar
+- RestaurantZero
+- Contact
 
-## Core Concept
+The portfolio supports Portuguese, English, and Spanish. Portuguese is the default language, with the selected language stored locally in the browser.
 
-**From ambiguity to structure.**
+## Professional model
 
-The portfolio explores a visual language where fragments of data, code, formulas, diagrams and watercolor gradually organize into systems, projects and meaning.
+Jeterson does not present himself as a traditional manual programmer.
 
-The site itself should demonstrate the same professional approach used in product development:
+His direct contribution is focused on:
 
-```text
-Ambiguity
-   |
-   v
-Exploration
-   |
-   v
-Structure
-   |
-   v
-Prototype
-   |
-   v
-Validation
-   |
-   v
-Product
+- product conception and problem definition
+- research and product intelligence
+- solution and high-level architecture planning
+- constraints, specifications, and validation criteria
+- prompt engineering and context design
+- agent design and orchestration
+- coordination of AI coding agents
+- validation of behavior, interface, tests, and expected outcomes
+
+Implementation code is produced by AI coding agents. Technical reviews and tests are also coordinated through AI-assisted workflows.
+
+## Selected projects
+
+### Pulsar
+
+Financial Decision Intelligence exploring deterministic software boundaries alongside governed AI.
+
+Case study: https://github.com/Jetferrari/pulsar-case-study
+
+### RestaurantZero
+
+Restaurant commerce focused on direct digital ordering, configurable catalog behavior, transactional integrity, and restaurant-owned customer experience.
+
+Case study: https://github.com/Jetferrari/restaurantzero-case-study
+
+## Implementation
+
+The portfolio currently uses:
+
+- vanilla HTML
+- CSS
+- JavaScript
+- lightweight Node.js build and preview scripts
+- local project artwork and Concept UI assets
+- Manrope loaded through Google Fonts
+
+There is no application framework and no runtime npm dependency.
+
+## Run locally
+
+Requires Node.js 20 or newer.
+
+```bash
+npm install
+npm run dev
 ```
 
-## Planned Sections
+Open:
 
-* Home
-* Profile
-* Projects
-* Process
-* Contact
+```text
+http://127.0.0.1:5173
+```
 
-## Selected Projects
+Production build:
 
-* Pulsar
-* RestaurantZero
+```bash
+npm run check
+npm run build
+npm run preview
+```
 
-Public case studies:
+## Routes
 
-* [Pulsar case study](https://github.com/Jetferrari/pulsar-case-study)
-* [RestaurantZero case study](https://github.com/Jetferrari/restaurantzero-case-study)
+```text
+/
+/profile
+/process
+/projects/pulsar
+/projects/restaurantzero
+/contact
+```
 
-## Creative Direction
+## Content source
 
-The visual direction combines:
+The canonical Portuguese portfolio copy is maintained in:
 
-* watercolor paper texture
-* restrained watercolor pigment
-* editorial typography
-* scientific illustration
-* technical diagrams
-* synthetic code and data fragments
-* interactive organization of apparent visual chaos
-* large areas of negative space
+```text
+docs/portfolio-copy.md
+```
 
-The portfolio should feel artistic without becoming an art portfolio, and technical without becoming a conventional developer website.
+Runtime translations for Portuguese, English, and Spanish are centralized in:
 
-## Public Content Policy
+```text
+src/i18n.js
+```
 
-This repository must not expose proprietary implementation details from private projects.
+## Public content policy
 
-Do not publish:
+This repository is intentionally public and contains only portfolio-safe material.
 
-* private source code
-* internal prompts
-* private schemas
-* evaluation datasets
-* proprietary business logic
-* internal architecture records
-* credentials
-* production configuration
-* sensitive operational data
-
-All technical fragments used for visual composition should be synthetic or intentionally simplified.
-
-## Documentation
-
-Detailed creative and experience planning is stored under `docs/`.
+It must not contain private project source code, credentials, internal prompts, proprietary business logic, private schemas, evaluation datasets, production secrets, or sensitive operational data.

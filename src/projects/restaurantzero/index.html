@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031b1a">
+  <meta name="description" content="Estudo de caso do RestaurantZero: comércio digital direto para restaurantes com catálogo configurável e integridade transacional." data-i18n-desc="restaurantZeroMetaDesc">
+  <title data-i18n-title="restaurantZeroPageTitle">RestaurantZero — Restaurant Commerce | Jeterson Ferrari</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23051f1e'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23b4e9dc'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-body">
+  <!-- Top Left Home Control -->
+  <a href="/" class="home-glyph-link" aria-label="Ir para a página inicial (Rede Sináptica)" data-i18n-attr="aria-label:homeGlyphAria">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <circle cx="19" cy="5" r="2"/>
+      <circle cx="5" cy="5" r="2"/>
+      <circle cx="5" cy="19" r="2"/>
+      <circle cx="19" cy="19" r="2"/>
+      <path d="M7 6h10M7 18h10M5 7v10M19 7v10"/>
+    </svg>
+  </a>
+  <!-- Top Floating Controls: [ language control ] [ hamburger ] -->
+  <div class="top-controls">
+    <div class="lang-selector" id="langSelector">
+      <button class="lang-toggle" id="langToggle" aria-label="Alterar idioma" aria-expanded="false" aria-controls="langMenu" data-i18n-attr="aria-label:langToggleAria">
+        <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-current" id="langCurrent">PT</span>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma">
+        <button class="lang-option active" data-lang="pt" role="menuitem" type="button">PT</button>
+        <button class="lang-option" data-lang="en" role="menuitem" type="button">EN</button>
+        <button class="lang-option" data-lang="es" role="menuitem" type="button">ES</button>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navDrawer" data-i18n-attr="aria-label:navToggleAria">
+      <span class="hamburger-box" aria-hidden="true">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </span>
+    </button>
+  </div>
+  <!-- Navigation Drawer & Backdrop -->
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-title" data-i18n="drawerTitle">Navegação</span>
+      <button class="drawer-close" id="navClose" aria-label="Fechar menu" data-i18n-attr="aria-label:navCloseAria">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="/" class="drawer-link " data-i18n="navHome">Home</a>
+      <a href="/profile" class="drawer-link " data-i18n="navProfile">Perfil</a>
+      <div class="drawer-group">
+        <span class="drawer-group-label" data-i18n="navProjects">Projetos</span>
+        <a href="/projects/pulsar" class="drawer-sublink ">Pulsar</a>
+        <a href="/projects/restaurantzero" class="drawer-sublink active">RestaurantZero</a>
+      </div>
+      <a href="/process" class="drawer-link " data-i18n="navProcess">Processo</a>
+      <a href="/contact" class="drawer-link " data-i18n="navContact">Contato</a>
+    </nav>
+    <div class="drawer-footer">
+      <p class="drawer-role">AI-Directed Product Builder</p>
+    </div>
+  </aside>
+  <main class="page-main">
+    <div class="portfolio-container case-study-container">
+
+      <!-- Case Study Header -->
+      <section class="case-study-hero">
+        <div class="section-badge"><span class="badge-num" data-i18n="restaurantZeroBadge">CASE STUDY / RESTAURANTZERO</span></div>
+        <div class="project-title-row">
+          <h1 class="project-headline">RestaurantZero</h1>
+          <a href="https://github.com/Jetferrari/restaurantzero-case-study" target="_blank" rel="noopener noreferrer" class="project-link-btn" aria-label="Abrir estudo de caso do RestaurantZero no GitHub" data-i18n-attr="aria-label:restaurantZeroCaseStudyLinkAria">
+            <span>GitHub Case Study</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </a>
+        </div>
+        <p class="project-subhead">Restaurant Commerce</p>
+        <p class="project-intro-lead" data-i18n="restaurantZeroIntroLead">
+          RestaurantZero é um projeto de comércio digital para restaurantes, pensado para reduzir dependência de intermediários e permitir maior controle sobre marca, catálogo, pedidos e experiência do cliente.
+        </p>
+
+        <div class="role-banner">
+          <span class="role-badge" data-i18n="restaurantZeroRoleBadge">Minha Atuação Direta</span>
+          <p data-i18n="restaurantZeroRoleText">
+            Minha contribuição está na concepção do produto, definição dos fluxos, priorização das capacidades, planejamento da solução e coordenação dos agentes responsáveis pela implementação técnica. O código é produzido integralmente por agentes de IA.
+          </p>
+        </div>
+
+        <!-- Primary Cover Visual -->
+        <figure class="case-study-figure main-cover-figure">
+          <div class="image-wrapper">
+            <img src="/assets/projects/restaurantzero/restaurantzero-cover.png" alt="Visão geral multi-dispositivo conceitual do RestaurantZero" class="concept-visual-img" loading="eager" data-i18n-attr="alt:restaurantZeroCoverImgAlt">
+          </div>
+          <figcaption class="concept-caption">
+            <span class="concept-tag">Concept UI</span>
+            <span class="caption-text" data-i18n="restaurantZeroCoverCaption">Visão conceitual multi-dispositivo do RestaurantZero.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Product Capabilities -->
+      <section class="case-study-section" id="capabilities">
+        <h2 class="section-title" data-i18n="restaurantZeroCapTitle">Capacidades do Produto</h2>
+        <p class="section-lead" data-i18n="restaurantZeroCapLead">
+          Estrutura construída para sustentabilidade operacional e integridade transacional no comércio gastronômico.
+        </p>
+
+        <div class="themes-grid">
+          <div class="theme-card">
+            <h3>Catalog & Modifiers</h3>
+            <p data-i18n="restaurantZeroCapCatalogDesc">Estrutura de catálogo com itens, complementos e regras configuráveis.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>Persistent Cart</h3>
+            <p data-i18n="restaurantZeroCapCartDesc">Carrinho persistente para preservar o estado da compra durante a experiência do usuário.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>Server-Side Pricing</h3>
+            <p data-i18n="restaurantZeroCapPricingDesc">Cálculo de preços validado no servidor para manter consistência entre interface e regras do produto.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>REST APIs & Validation</h3>
+            <p data-i18n="restaurantZeroCapApisDesc">APIs e contratos de dados estruturados para comunicação entre os módulos do sistema.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>Order Creation & Idempotency</h3>
+            <p data-i18n="restaurantZeroCapOrderDesc">Fluxos de criação de pedidos planejados para evitar duplicações em operações repetidas.</p>
+          </div>
+
+          <div class="theme-card">
+            <h3>PostgreSQL & Configurable Branding</h3>
+            <p data-i18n="restaurantZeroCapPostgresDesc">Persistência relacional e identidade configurável fazem parte da arquitetura atual do projeto.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Supporting Visual 1: Storefront -->
+      <section class="case-study-section" id="storefront-concept">
+        <h2 class="section-title" data-i18n="restaurantZeroStorefrontTitle">Storefront Configurável</h2>
+        <p class="section-lead" data-i18n="restaurantZeroStorefrontLead">
+          Experiência de autoatendimento focada no cliente final, adaptável à identidade visual de cada restaurante.
+        </p>
+
+        <figure class="case-study-figure">
+          <div class="image-wrapper">
+            <img src="/assets/projects/restaurantzero/restaurantzero-storefront.png" alt="Storefront conceitual configurável do RestaurantZero" class="concept-visual-img" loading="lazy" data-i18n-attr="alt:restaurantZeroStorefrontImgAlt">
+          </div>
+          <figcaption class="concept-caption">
+            <span class="concept-tag">Concept UI</span>
+            <span class="caption-text" data-i18n="restaurantZeroStorefrontCaption">Exemplo de storefront configurável dentro da experiência RestaurantZero.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Supporting Visual 2: Operations -->
+      <section class="case-study-section" id="operations-concept">
+        <h2 class="section-title" data-i18n="restaurantZeroOpsTitle">Ambiente Operacional</h2>
+        <p class="section-lead" data-i18n="restaurantZeroOpsLead">
+          Gestão centralizada de pedidos em tempo real, controle de itens de menu e acompanhamento de fluxos de preparo.
+        </p>
+
+        <figure class="case-study-figure">
+          <div class="image-wrapper">
+            <img src="/assets/projects/restaurantzero/restaurantzero-operations.png" alt="Ambiente operacional conceitual planejado para o RestaurantZero" class="concept-visual-img" loading="lazy" data-i18n-attr="alt:restaurantZeroOpsImgAlt">
+          </div>
+          <figcaption class="concept-caption">
+            <span class="concept-tag">Concept UI</span>
+            <span class="caption-text" data-i18n="restaurantZeroOpsCaption">Exploração visual do ambiente operacional planejado para o RestaurantZero.</span>
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Technologies Present -->
+      <section class="case-study-section" id="project-tech">
+        <h2 class="section-title" data-i18n="restaurantZeroTechTitle">Tecnologias Presentes no Projeto</h2>
+        <p class="tech-clarification" data-i18n="restaurantZeroTechClarification">
+          Tecnologias presentes na base técnica do RestaurantZero, especificadas no planejamento e implementadas por agentes de código:
+        </p>
+        <div class="pills-wrap">
+          <span class="stack-pill">TypeScript</span>
+          <span class="stack-pill">React</span>
+          <span class="stack-pill">Fastify</span>
+          <span class="stack-pill">REST APIs</span>
+          <span class="stack-pill">Zod</span>
+          <span class="stack-pill">PostgreSQL</span>
+          <span class="stack-pill">Configurable Branding</span>
+          <span class="stack-pill">Idempotency</span>
+        </div>
+      </section>
+
+      <!-- Next Project & Return Nav -->
+      <section class="case-study-footer-nav">
+        <div class="cross-nav-box">
+          <a href="/projects/pulsar" class="cross-nav-link next">
+            <span class="nav-sub" data-i18n="restaurantZeroOtherProjectLabel">Outro Projeto</span>
+            <span class="nav-title">&larr; Pulsar</span>
+          </a>
+        </div>
+      </section>
+
+  <footer class="portfolio-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Jeterson Ferrari • AI-Directed Product Builder</p>
+      <a href="/" class="footer-back-link" aria-label="Retornar à página inicial (Rede Sináptica)" data-i18n-attr="aria-label:footerBackToHubAria">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 6h10M7 18h10M5 7v10M19 7v10"/></svg>
+        <span data-i18n="footerBackToHub">Voltar ao hub</span>
+      </a>
+    </div>
+  </footer>
+    </div>
+  </main>
+
+  <script src="/i18n.js"></script>
+  <script src="/nav.js"></script>
+</body>
+</html>

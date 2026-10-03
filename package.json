@@ -1,0 +1,17 @@
+{
+  "name": "synaptic-ai-hero",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portable Synaptic AI hero with the original refined animation and local artwork.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node scripts/serve.mjs src",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs dist",
+    "start": "node scripts/serve.mjs dist",
+    "check": "node --check src/app.js && node --check src/nav.js && node --check src/i18n.js && node --check scripts/serve.mjs && node --check scripts/build.mjs"
+  }
+}

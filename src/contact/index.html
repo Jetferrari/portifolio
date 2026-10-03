@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#031b1a">
+  <meta name="description" content="Entre em contato com Jeterson Ferrari, AI-Directed Product Builder. Telefone, e-mail, LinkedIn e GitHub." data-i18n-desc="contactMetaDesc">
+  <title data-i18n-title="contactPageTitle">Contact — Jeterson Ferrari | AI-Directed Product Builder</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23051f1e'/%3E%3Ccircle cx='16' cy='16' r='8' fill='none' stroke='%23b4e9dc'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-body">
+  <!-- Top Left Home Control -->
+  <a href="/" class="home-glyph-link" aria-label="Ir para a página inicial (Rede Sináptica)" data-i18n-attr="aria-label:homeGlyphAria">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="3"/>
+      <circle cx="19" cy="5" r="2"/>
+      <circle cx="5" cy="5" r="2"/>
+      <circle cx="5" cy="19" r="2"/>
+      <circle cx="19" cy="19" r="2"/>
+      <path d="M7 6h10M7 18h10M5 7v10M19 7v10"/>
+    </svg>
+  </a>
+  <!-- Top Floating Controls: [ language control ] [ hamburger ] -->
+  <div class="top-controls">
+    <div class="lang-selector" id="langSelector">
+      <button class="lang-toggle" id="langToggle" aria-label="Alterar idioma" aria-expanded="false" aria-controls="langMenu" data-i18n-attr="aria-label:langToggleAria">
+        <svg class="lang-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"/>
+          <line x1="2" y1="12" x2="22" y2="12"/>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </svg>
+        <span class="lang-current" id="langCurrent">PT</span>
+      </button>
+      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma">
+        <button class="lang-option active" data-lang="pt" role="menuitem" type="button">PT</button>
+        <button class="lang-option" data-lang="en" role="menuitem" type="button">EN</button>
+        <button class="lang-option" data-lang="es" role="menuitem" type="button">ES</button>
+      </div>
+    </div>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navDrawer" data-i18n-attr="aria-label:navToggleAria">
+      <span class="hamburger-box" aria-hidden="true">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </span>
+    </button>
+  </div>
+  <!-- Navigation Drawer & Backdrop -->
+  <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true">
+    <div class="drawer-header">
+      <span class="drawer-title" data-i18n="drawerTitle">Navegação</span>
+      <button class="drawer-close" id="navClose" aria-label="Fechar menu" data-i18n-attr="aria-label:navCloseAria">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <a href="/" class="drawer-link " data-i18n="navHome">Home</a>
+      <a href="/profile" class="drawer-link " data-i18n="navProfile">Perfil</a>
+      <div class="drawer-group">
+        <span class="drawer-group-label" data-i18n="navProjects">Projetos</span>
+        <a href="/projects/pulsar" class="drawer-sublink ">Pulsar</a>
+        <a href="/projects/restaurantzero" class="drawer-sublink ">RestaurantZero</a>
+      </div>
+      <a href="/process" class="drawer-link " data-i18n="navProcess">Processo</a>
+      <a href="/contact" class="drawer-link active" data-i18n="navContact">Contato</a>
+    </nav>
+    <div class="drawer-footer">
+      <p class="drawer-role">AI-Directed Product Builder</p>
+    </div>
+  </aside>
+  <main class="page-main">
+    <div class="portfolio-container">
+
+      <section class="portfolio-section" id="contact" aria-label="Contato e Oportunidade">
+        <div class="section-badge"><span class="badge-num" data-i18n="contactSectionBadge">CONTATO / OPORTUNIDADE</span></div>
+        
+        <div class="opportunity-card">
+          <p class="opp-lead" data-i18n="contactOppLead">
+            Se você tem um problema de produto que pode ser transformado em software, quero entender o problema.
+          </p>
+          <p class="opp-text" data-i18n="contactOppText">
+            Procuro minha primeira oportunidade profissional em desenvolvimento AI-native. Posso partir de um problema aberto e estruturar o processo do zero ou trabalhar dentro de tecnologias, arquiteturas, agentes e restrições previamente definidos pela equipe.
+          </p>
+          <p class="opp-goal" data-i18n="contactOppGoal">
+            <strong>Meu objetivo é simples:</strong> receber um problema, entender o resultado esperado e coordenar os recursos de IA necessários para chegar a uma solução funcional e verificável.
+          </p>
+        </div>
+
+        <div class="contact-box">
+          <div class="contact-grid">
+            <div class="contact-item">
+              <span class="channel-label" data-i18n="contactPhoneLabel">Telefone</span>
+              <a href="tel:+5511976539888" class="contact-link">+55 11 97653-9888</a>
+            </div>
+
+            <div class="contact-item">
+              <span class="channel-label" data-i18n="contactEmailLabel">E-mail</span>
+              <a href="mailto:jet.ferrari.ai@gmail.com" class="contact-link">jet.ferrari.ai@gmail.com</a>
+            </div>
+
+            <div class="contact-item">
+              <span class="channel-label" data-i18n="contactLinkedInLabel">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/jf11" target="_blank" rel="noopener noreferrer" class="contact-link external">
+                <span>linkedin.com/in/jf11</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <span class="channel-label" data-i18n="contactGitHubLabel">GitHub</span>
+              <a href="https://github.com/Jetferrari" target="_blank" rel="noopener noreferrer" class="contact-link external">
+                <span>github.com/Jetferrari</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+  <footer class="portfolio-footer">
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Jeterson Ferrari • AI-Directed Product Builder</p>
+      <a href="/" class="footer-back-link" aria-label="Retornar à página inicial (Rede Sináptica)" data-i18n-attr="aria-label:footerBackToHubAria">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 6h10M7 18h10M5 7v10M19 7v10"/></svg>
+        <span data-i18n="footerBackToHub">Voltar ao hub</span>
+      </a>
+    </div>
+  </footer>
+    </div>
+  </main>
+
+  <script src="/i18n.js"></script>
+  <script src="/nav.js"></script>
+</body>
+</html>
