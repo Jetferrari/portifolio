@@ -1,12 +1,46 @@
-# Jeterson Ferrari — AI-Directed Product Builder
+# Jeterson Ferrari Portfolio
+
+## AI-Directed Product Builder
 
 Public source repository for Jeterson Ferrari's professional portfolio.
 
-The portfolio presents an AI-native product development workflow centered on problem definition, product thinking, high-level architecture planning, prompt engineering, agent orchestration, and result validation.
+The portfolio presents an AI-native product development workflow centered on product thinking, problem definition, high-level architecture planning, Prompt Engineering, Agent Orchestration, and result validation.
 
-## Portfolio experience
+## Current status
 
-The interface is built around a Synaptic navigation hub that connects the main areas of the portfolio:
+The portfolio is implemented and multilingual.
+
+Supported languages:
+
+- Portuguese, default
+- English
+- Spanish
+
+The interface uses a Synaptic visual navigation hub connecting the main areas of the portfolio.
+
+## Professional model
+
+Jeterson does not present himself as a traditional manual programmer.
+
+His direct contribution is focused on:
+
+- product conception and problem definition
+- research and product intelligence
+- expected outcome definition
+- solution and high-level architecture planning with AI
+- constraints, specifications, and validation criteria
+- Prompt Engineering and Context Design
+- specialized agent design
+- Agent Orchestration and task decomposition
+- coordination of AI coding agents
+- Cross-Model Review and automated testing coordination
+- validation of behavior, interface, evidence, and expected results
+
+Implementation code is produced by AI coding agents.
+
+Jeterson does not manually write implementation code, perform line-by-line code review, or use VS Code or another traditional code editor as the central environment in the workflow.
+
+## Portfolio sections
 
 - Profile
 - Tools & Technologies
@@ -19,38 +53,23 @@ The interface is built around a Synaptic navigation hub that connects the main a
 - RestaurantZero
 - Contact
 
-The portfolio supports Portuguese, English, and Spanish. Portuguese is the default language, with the selected language stored locally in the browser.
-
-## Professional model
-
-Jeterson does not present himself as a traditional manual programmer.
-
-His direct contribution is focused on:
-
-- product conception and problem definition
-- research and product intelligence
-- solution and high-level architecture planning
-- constraints, specifications, and validation criteria
-- prompt engineering and context design
-- agent design and orchestration
-- coordination of AI coding agents
-- validation of behavior, interface, tests, and expected outcomes
-
-Implementation code is produced by AI coding agents. Technical reviews and tests are also coordinated through AI-assisted workflows.
-
 ## Selected projects
 
 ### Pulsar
 
-Financial Decision Intelligence exploring deterministic software boundaries alongside governed AI.
+Financial Decision Intelligence exploring how deterministic software and governed AI can coexist within explicit boundaries.
 
-Case study: https://github.com/Jetferrari/pulsar-case-study
+Case study:
+
+https://github.com/Jetferrari/pulsar-case-study
 
 ### RestaurantZero
 
-Restaurant commerce focused on direct digital ordering, configurable catalog behavior, transactional integrity, and restaurant-owned customer experience.
+Restaurant commerce focused on direct digital ordering, configurable catalog behavior, server-side pricing, persistent cart state, order creation, idempotency, and configurable branding.
 
-Case study: https://github.com/Jetferrari/restaurantzero-case-study
+Case study:
+
+https://github.com/Jetferrari/restaurantzero-case-study
 
 ## Implementation
 
@@ -61,7 +80,7 @@ The portfolio currently uses:
 - JavaScript
 - lightweight Node.js build and preview scripts
 - local project artwork and Concept UI assets
-- Manrope loaded through Google Fonts
+- Manrope through Google Fonts
 
 There is no application framework and no runtime npm dependency.
 
@@ -80,7 +99,7 @@ Open:
 http://127.0.0.1:5173
 ```
 
-Production build:
+Validate and build:
 
 ```bash
 npm run check
@@ -99,6 +118,18 @@ npm run preview
 /contact
 ```
 
+## Internationalization
+
+Portuguese is the default language.
+
+Runtime translations for Portuguese, English, and Spanish are centralized in:
+
+```text
+src/i18n.js
+```
+
+The selected language is persisted locally in the browser.
+
 ## Content source
 
 The canonical Portuguese portfolio copy is maintained in:
@@ -107,14 +138,27 @@ The canonical Portuguese portfolio copy is maintained in:
 docs/portfolio-copy.md
 ```
 
-Runtime translations for Portuguese, English, and Spanish are centralized in:
-
-```text
-src/i18n.js
-```
-
 ## Public content policy
 
 This repository is intentionally public and contains only portfolio-safe material.
 
-It must not contain private project source code, credentials, internal prompts, proprietary business logic, private schemas, evaluation datasets, production secrets, or sensitive operational data.
+It must not contain:
+
+- private project source code
+- credentials or secrets
+- internal prompts
+- proprietary business logic
+- private schemas
+- evaluation datasets
+- production configuration
+- sensitive operational data
+
+## Related
+
+GitHub profile:
+
+https://github.com/Jetferrari
+
+LinkedIn:
+
+https://www.linkedin.com/in/jf11
