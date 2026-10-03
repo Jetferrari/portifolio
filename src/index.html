@@ -21,7 +21,7 @@
         </svg>
         <span class="lang-current" id="langCurrent">PT</span>
       </button>
-      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma">
+      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma" aria-hidden="true" inert data-i18n-attr="aria-label:langMenuAria">
         <button class="lang-option active" data-lang="pt" role="menuitem" type="button">PT</button>
         <button class="lang-option" data-lang="en" role="menuitem" type="button">EN</button>
         <button class="lang-option" data-lang="es" role="menuitem" type="button">ES</button>
@@ -38,7 +38,7 @@
   </div>
   <!-- Navigation Drawer & Backdrop -->
   <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
-  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true">
+  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true" inert data-i18n-attr="aria-label:navDrawerAria">
     <div class="drawer-header">
       <span class="drawer-title" data-i18n="drawerTitle">Navegação</span>
       <button class="drawer-close" id="navClose" aria-label="Fechar menu" data-i18n-attr="aria-label:navCloseAria">
@@ -63,23 +63,24 @@
   <main class="home-main">
     <section class="hero-stage home-stage" aria-label="Rede neural interativa de navegação profissional" data-i18n-attr="aria-label:homeHeroStageAria">
       <div class="scene" id="scene">
-        <img src="/network.png" alt="Núcleo central de IA conectado a dez nodos circulares minimalistas em uma rede verde-petróleo" draggable="false">
-        <div class="breath"></div>
         <svg id="network" viewBox="0 0 1672 941" aria-label="Mapa interativo dos dez eixos profissionais de Jeterson Ferrari" data-i18n-attr="aria-label:homeNetworkSvgAria">
           <defs>
             <filter id="soft" x="-150%" y="-150%" width="400%" height="400%">
               <feGaussianBlur stdDeviation="4"/>
             </filter>
           </defs>
+          <rect id="artwork-backdrop" fill="#02100f" aria-hidden="true"/>
+          <image id="network-artwork" href="/network.png" x="0" y="0" width="1672" height="941" preserveAspectRatio="xMidYMid meet" aria-hidden="true"/>
           <g id="paths"></g>
           <g id="signals" aria-hidden="true"></g>
           <g id="nodes"></g>
           <rect id="core" class="hit core-hit" x="744" y="358" width="184" height="190" rx="70" tabindex="0" role="button" aria-label="Ativar pulso do núcleo de IA" data-i18n-attr="aria-label:homeCoreAria"/>
         </svg>
+        <div class="breath" aria-hidden="true"></div>
       </div>
       <div class="vignette" aria-hidden="true"></div>
 
-      <div class="home-navigation-hint" aria-hidden="true">
+      <div class="home-navigation-hint">
         <span class="hint-label" data-i18n="homeHint">Selecione um módulo para navegar pelo portfólio</span>
       </div>
     </section>

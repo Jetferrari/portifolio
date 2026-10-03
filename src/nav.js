@@ -17,10 +17,15 @@
     } else {
       const langMenu = document.getElementById('langMenu');
       const langToggle = document.getElementById('langToggle');
-      if (langMenu) langMenu.classList.remove('is-open');
+      if (langMenu) {
+        langMenu.classList.remove('is-open');
+        langMenu.setAttribute('aria-hidden', 'true');
+        langMenu.inert = true;
+      }
       if (langToggle) langToggle.setAttribute('aria-expanded', 'false');
     }
     toggle.setAttribute('aria-expanded', 'true');
+    drawer.inert = false;
     drawer.setAttribute('aria-hidden', 'false');
     drawer.classList.add('is-open');
     backdrop.classList.add('is-open');
@@ -33,6 +38,7 @@
     toggle.setAttribute('aria-expanded', 'false');
     drawer.setAttribute('aria-hidden', 'true');
     drawer.classList.remove('is-open');
+    drawer.inert = true;
     backdrop.classList.remove('is-open');
     document.body.classList.remove('nav-locked');
     toggle.focus();

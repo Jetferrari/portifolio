@@ -27,8 +27,10 @@ const root = typeof window !== 'undefined'
   "pt": {
     "langLabel": "PT",
     "langToggleAria": "Alterar idioma",
+    "langMenuAria": "Opções de idioma",
     "navToggleAria": "Abrir menu de navegação",
     "navCloseAria": "Fechar menu",
+    "navDrawerAria": "Menu principal",
     "homeGlyphAria": "Ir para a página inicial (Rede Sináptica)",
     "drawerTitle": "Navegação",
     "navHome": "Home",
@@ -200,8 +202,10 @@ const root = typeof window !== 'undefined'
   "en": {
     "langLabel": "EN",
     "langToggleAria": "Change language",
+    "langMenuAria": "Language options",
     "navToggleAria": "Open navigation menu",
     "navCloseAria": "Close menu",
+    "navDrawerAria": "Main menu",
     "homeGlyphAria": "Go to home page (Synaptic Network)",
     "drawerTitle": "Navigation",
     "navHome": "Home",
@@ -373,8 +377,10 @@ const root = typeof window !== 'undefined'
   "es": {
     "langLabel": "ES",
     "langToggleAria": "Cambiar idioma",
+    "langMenuAria": "Opciones de idioma",
     "navToggleAria": "Abrir menú de navegación",
     "navCloseAria": "Cerrar menú",
+    "navDrawerAria": "Menú principal",
     "homeGlyphAria": "Ir a la página de inicio (Red Sináptica)",
     "drawerTitle": "Navegación",
     "navHome": "Inicio",
@@ -640,7 +646,11 @@ const root = typeof window !== 'undefined'
     const toggle = document.getElementById('langToggle');
     const menu = document.getElementById('langMenu');
     if (toggle) toggle.setAttribute('aria-expanded', 'false');
-    if (menu) menu.classList.remove('is-open');
+    if (menu) {
+      menu.classList.remove('is-open');
+      menu.setAttribute('aria-hidden', 'true');
+      menu.inert = true;
+    }
   }
 
   function openSelector() {
@@ -654,6 +664,7 @@ const root = typeof window !== 'undefined'
       if (drawer && drawer.classList.contains('is-open')) {
         drawer.classList.remove('is-open');
         drawer.setAttribute('aria-hidden', 'true');
+        drawer.inert = true;
         if (backdrop) backdrop.classList.remove('is-open');
         if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
         document.body.classList.remove('nav-locked');
@@ -665,6 +676,8 @@ const root = typeof window !== 'undefined'
     if (toggle) toggle.setAttribute('aria-expanded', 'true');
     if (menu) {
       menu.classList.add('is-open');
+      menu.setAttribute('aria-hidden', 'false');
+      menu.inert = false;
       const activeOpt = menu.querySelector('.lang-option.active');
       if (activeOpt) activeOpt.focus();
     }
@@ -721,6 +734,7 @@ const root = typeof window !== 'undefined'
 
   function init() {
     currentLang = getSavedLang();
+    closeSelector();
     applyLanguage(currentLang);
     bindSelector();
     // Notify dynamic listeners of the restored saved language

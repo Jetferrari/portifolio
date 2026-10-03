@@ -32,7 +32,7 @@
         </svg>
         <span class="lang-current" id="langCurrent">PT</span>
       </button>
-      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma">
+      <div class="lang-menu" id="langMenu" role="menu" aria-label="Opções de idioma" aria-hidden="true" inert data-i18n-attr="aria-label:langMenuAria">
         <button class="lang-option active" data-lang="pt" role="menuitem" type="button">PT</button>
         <button class="lang-option" data-lang="en" role="menuitem" type="button">EN</button>
         <button class="lang-option" data-lang="es" role="menuitem" type="button">ES</button>
@@ -49,7 +49,7 @@
   </div>
   <!-- Navigation Drawer & Backdrop -->
   <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
-  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true">
+  <aside class="nav-drawer" id="navDrawer" aria-label="Menu principal" aria-hidden="true" inert data-i18n-attr="aria-label:navDrawerAria">
     <div class="drawer-header">
       <span class="drawer-title" data-i18n="drawerTitle">Navegação</span>
       <button class="drawer-close" id="navClose" aria-label="Fechar menu" data-i18n-attr="aria-label:navCloseAria">
@@ -74,8 +74,8 @@
   <main class="page-main">
     <div class="portfolio-container">
 
-      <section class="portfolio-section" id="contact" aria-label="Contato e Oportunidade">
-        <div class="section-badge"><span class="badge-num" data-i18n="contactSectionBadge">CONTATO / OPORTUNIDADE</span></div>
+      <section class="portfolio-section" id="contact" aria-labelledby="contact-heading">
+        <div class="section-badge"><h1 class="badge-num" id="contact-heading" data-i18n="contactSectionBadge">CONTATO / OPORTUNIDADE</h1></div>
         
         <div class="opportunity-card">
           <p class="opp-lead" data-i18n="contactOppLead">

@@ -2,14 +2,20 @@
 
 const NS = "http://www.w3.org/2000/svg";
 const scene = document.querySelector("#scene");
+const networkSvg = document.querySelector("#network");
+const artworkBackdrop = document.querySelector("#artwork-backdrop");
+const artwork = document.querySelector("#network-artwork");
 const paths = document.querySelector("#paths");
 const signals = document.querySelector("#signals");
 const nodes = document.querySelector("#nodes");
 const core = document.querySelector("#core");
 const reduced = matchMedia("(prefers-reduced-motion: reduce)");
 
+const PORTRAIT_ARTWORK = { src: "/network-portrait.png", width: 941, height: 1672 };
+const LANDSCAPE_ARTWORK = { src: "/network.png", width: 1672, height: 941 };
+const PORTRAIT_CROP = { minimumWidth: 825, minimumHeight: 1380, focusX: 470, focusY: 836 };
+
 // Canonical node mapping for Jeterson Ferrari Portfolio
-// Positions, radii, and SVG paths remain 100% identical to the authoritative baseline
 const NODE_I18N_KEYS = {
   profile: "nodeProfile",
   "tech-stack": "nodeTechStack",
@@ -22,6 +28,112 @@ const NODE_I18N_KEYS = {
   process: "nodeProcess",
   restaurantzero: "nodeRestaurantZero"
 };
+
+const LAYOUTS = {
+  landscape: {
+    viewBox: "0 0 1672 941",
+    artwork: LANDSCAPE_ARTWORK,
+    core: { x: 744, y: 370, width: 184, height: 190, rx: 70 },
+    specs: [
+      { id: "profile", name: "Profile", url: "/profile", x: 836, y: 145, r: 65, d: "M836 370 L836 220", lx: 836, ly: 34, anchor: "middle" },
+      { id: "tech-stack", name: "Tech Stack", url: "/profile#tools", x: 1058, y: 219, r: 65, d: "M918 390 C954 358 948 313 978 279 C995 257 1014 247 1033 245", lx: 1132, ly: 168, anchor: "start" },
+      { id: "languages", name: "Languages", url: "/profile#languages", x: 1187, y: 389, r: 65, d: "M940 441 L991 441 C1043 441 1039 389 1100 389 L1122 389", lx: 1262, ly: 394, anchor: "start" },
+      { id: "ai-workflow", name: "AI Workflow", url: "/process#ai-workflow", x: 1187, y: 553, r: 64, d: "M940 489 L991 489 C1043 489 1038 553 1105 553 L1122 553", lx: 1262, ly: 558, anchor: "start" },
+      { id: "contact", name: "Contact", url: "/contact", x: 1058, y: 707, r: 63, d: "M921 532 C967 532 950 585 974 615 C990 635 1006 652 1024 668", lx: 1124, ly: 787, anchor: "start" },
+      { id: "architecture", name: "Architecture", url: "/process#architecture", x: 836, y: 780, r: 65, d: "M836 560 L836 710", lx: 836, ly: 866, anchor: "middle" },
+      { id: "problem-solving", name: "Problem Solving", url: "/process#problem-solving", x: 619, y: 707, r: 64, d: "M751 532 C705 532 722 585 698 615 C682 635 666 652 648 668", lx: 548, ly: 787, anchor: "end" },
+      { id: "pulsar", name: "Pulsar", url: "/projects/pulsar", x: 486, y: 553, r: 64, d: "M732 489 L683 489 C631 489 635 553 568 553 L551 553", lx: 410, ly: 558, anchor: "end" },
+      { id: "process", name: "Process", url: "/process", x: 486, y: 389, r: 65, d: "M732 441 L681 441 C629 441 635 389 574 389 L551 389", lx: 410, ly: 394, anchor: "end" },
+      { id: "restaurantzero", name: "RestaurantZero", url: "/projects/restaurantzero", x: 619, y: 219, r: 65, d: "M754 386 C718 358 724 313 694 279 C677 257 658 247 640 245", lx: 548, ly: 168, anchor: "end" }
+    ]
+  },
+  portrait: {
+    viewBox: "0 0 941 1672",
+    artwork: PORTRAIT_ARTWORK,
+    core: { x: 365, y: 685, width: 210, height: 210, rx: 70 },
+    specs: [
+      { id: "profile", name: "Profile", url: "/profile", x: 470, y: 280, r: 68, d: "M470 685 L470 350", lx: 470, ly: 175, anchor: "middle" },
+      { id: "tech-stack", name: "Tech Stack", url: "/profile#tools", x: 694, y: 410, r: 68, d: "M550 742 C586 684 614 563 656 480", lx: 785, ly: 365, anchor: "start" },
+      { id: "languages", name: "Languages", url: "/profile#languages", x: 785, y: 650, r: 68, d: "M552 750 C608 725 635 654 712 650", lx: 877, ly: 655, anchor: "start" },
+      { id: "ai-workflow", name: "AI Workflow", url: "/process#ai-workflow", x: 785, y: 950, r: 68, d: "M552 830 C608 855 640 946 712 950", lx: 877, ly: 955, anchor: "start" },
+      { id: "contact", name: "Contact", url: "/contact", x: 694, y: 1190, r: 68, d: "M550 840 C590 924 618 1050 656 1127", lx: 785, ly: 1235, anchor: "start" },
+      { id: "architecture", name: "Architecture", url: "/process#architecture", x: 470, y: 1345, r: 68, d: "M470 895 L470 1275", lx: 470, ly: 1450, anchor: "middle" },
+      { id: "problem-solving", name: "Problem Solving", url: "/process#problem-solving", x: 247, y: 1190, r: 68, d: "M390 840 C350 924 322 1050 284 1127", lx: 155, ly: 1235, anchor: "end" },
+      { id: "pulsar", name: "Pulsar", url: "/projects/pulsar", x: 157, y: 950, r: 68, d: "M388 830 C330 855 285 950 225 950", lx: 65, ly: 955, anchor: "end" },
+      { id: "process", name: "Process", url: "/process", x: 157, y: 650, r: 68, d: "M365 790 C306 790 280 650 225 650", lx: 65, ly: 655, anchor: "end" },
+      { id: "restaurantzero", name: "RestaurantZero", url: "/projects/restaurantzero", x: 247, y: 410, r: 68, d: "M390 742 C354 684 326 563 284 480", lx: 155, ly: 365, anchor: "end" }
+    ]
+  }
+};
+
+function getActiveMode() {
+  const isPortrait = typeof window !== "undefined" && window.matchMedia("(orientation: portrait)").matches;
+  return isPortrait ? "portrait" : "landscape";
+}
+
+function formatViewBox(values) {
+  return values.map(value => Number(value.toFixed(3))).join(" ");
+}
+
+function getPortraitViewBox() {
+  const bounds = scene ? scene.getBoundingClientRect() : null;
+  const width = bounds?.width || window.innerWidth || PORTRAIT_ARTWORK.width;
+  const height = bounds?.height || window.innerHeight || PORTRAIT_ARTWORK.height;
+  const aspect = width / height;
+
+  // Keep the entire clickable network in view while letting narrow phones crop
+  // only the empty outer edge of the portrait artwork. A small virtual margin
+  // is allowed beyond the raster when needed to preserve the source composition.
+  const cropWidth = Math.max(PORTRAIT_CROP.minimumWidth, aspect * PORTRAIT_CROP.minimumHeight);
+  const cropHeight = cropWidth / aspect;
+  const x = PORTRAIT_CROP.focusX - cropWidth / 2;
+  const y = PORTRAIT_CROP.focusY - cropHeight / 2;
+  return [x, y, cropWidth, cropHeight];
+}
+
+let activeArtworkSrc = "";
+
+function syncArtworkFrame(mode, layout) {
+  const viewBox = mode === "portrait" ? getPortraitViewBox() : [0, 0, layout.artwork.width, layout.artwork.height];
+  if (networkSvg) networkSvg.setAttribute("viewBox", formatViewBox(viewBox));
+  if (artworkBackdrop) {
+    artworkBackdrop.setAttribute("x", viewBox[0]);
+    artworkBackdrop.setAttribute("y", viewBox[1]);
+    artworkBackdrop.setAttribute("width", viewBox[2]);
+    artworkBackdrop.setAttribute("height", viewBox[3]);
+  }
+  if (artwork) {
+    artwork.setAttribute("x", "0");
+    artwork.setAttribute("y", "0");
+    artwork.setAttribute("width", layout.artwork.width);
+    artwork.setAttribute("height", layout.artwork.height);
+    if (activeArtworkSrc !== layout.artwork.src) {
+      artwork.setAttribute("href", layout.artwork.src);
+      activeArtworkSrc = layout.artwork.src;
+    }
+  }
+}
+
+const artworkLoadPromises = new Map();
+
+function prepareArtwork(src) {
+  if (!artworkLoadPromises.has(src)) {
+    const image = new Image();
+    image.src = src;
+    const load = (typeof image.decode === "function"
+      ? image.decode()
+      : new Promise((resolve, reject) => {
+          image.addEventListener("load", resolve, { once: true });
+          image.addEventListener("error", reject, { once: true });
+        }))
+      .catch(error => {
+        artworkLoadPromises.delete(src);
+        throw error;
+      });
+    artworkLoadPromises.set(src, load);
+  }
+  return artworkLoadPromises.get(src);
+}
 
 function getNodeTranslation(id, fallback) {
   if (typeof window !== "undefined" && window.i18n) {
@@ -42,19 +154,6 @@ function getNodeAriaLabel(id, fallback) {
   return `Ir para ${label}`;
 }
 
-const specs = [
-  { id: "profile", name: "Profile", url: "/profile", x: 836, y: 111, r: 65, d: "M836 345 L836 181", lx: 836, ly: 34, anchor: "middle" },
-  { id: "tech-stack", name: "Tech Stack", url: "/profile#tools", x: 1077, y: 191, r: 65, d: "M915 352 C941 333 915 284 936 250 C951 226 979 214 1006 209", lx: 1148, ly: 142, anchor: "start" },
-  { id: "languages", name: "Languages", url: "/profile#languages", x: 1186, y: 371, r: 65, d: "M943 437 L993 437 C1046 437 1040 371 1091 372 L1117 372", lx: 1262, ly: 376, anchor: "start" },
-  { id: "ai-workflow", name: "AI Workflow", url: "/process#ai-workflow", x: 1178, y: 560, r: 64, d: "M941 493 L986 493 C1040 493 1041 560 1088 560 L1109 560", lx: 1254, ly: 565, anchor: "start" },
-  { id: "contact", name: "Contact", url: "/contact", x: 1052, y: 725, r: 63, d: "M932 531 C981 531 951 581 969 613 C980 635 1001 653 1014 666", lx: 1118, ly: 805, anchor: "start" },
-  { id: "architecture", name: "Architecture", url: "/process#architecture", x: 836, y: 789, r: 65, d: "M836 560 L836 718", lx: 836, ly: 875, anchor: "middle" },
-  { id: "problem-solving", name: "Problem Solving", url: "/process#problem-solving", x: 620, y: 725, r: 64, d: "M740 531 C693 531 720 578 704 610 C695 629 672 650 658 666", lx: 550, ly: 805, anchor: "end" },
-  { id: "pulsar", name: "Pulsar", url: "/projects/pulsar", x: 495, y: 560, r: 64, d: "M731 493 L692 493 C637 493 638 560 589 560 L563 560", lx: 420, ly: 565, anchor: "end" },
-  { id: "process", name: "Process", url: "/process", x: 487, y: 371, r: 65, d: "M729 437 L685 437 C630 437 635 372 578 372 L556 372", lx: 412, ly: 376, anchor: "end" },
-  { id: "restaurantzero", name: "RestaurantZero", url: "/projects/restaurantzero", x: 595, y: 190, r: 65, d: "M757 352 C731 337 755 287 739 254 C724 225 692 213 666 209", lx: 525, ly: 142, anchor: "end" }
-];
-
 function svg(tag, attrs, parent) {
   const el = document.createElementNS(NS, tag);
   for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v);
@@ -64,7 +163,19 @@ function svg(tag, attrs, parent) {
 
 const random = (a, b) => a + Math.random() * (b - a);
 
-const tracks = specs.map((spec, i) => {
+// Initialize SVG elements using initial layout
+const initialMode = getActiveMode();
+const initialLayout = LAYOUTS[initialMode];
+syncArtworkFrame(initialMode, initialLayout);
+if (core) {
+  core.setAttribute("x", initialLayout.core.x);
+  core.setAttribute("y", initialLayout.core.y);
+  core.setAttribute("width", initialLayout.core.width);
+  core.setAttribute("height", initialLayout.core.height);
+  core.setAttribute("rx", initialLayout.core.rx);
+}
+
+const tracks = initialLayout.specs.map((spec, i) => {
   const { id, name, url, x, y, r, d, lx, ly, anchor } = spec;
   const path = svg("path", { d, class: "path", id: `path-${id}` }, paths);
   const group = svg("g", { class: "node", id: `node-${id}` }, nodes);
@@ -73,7 +184,7 @@ const tracks = specs.map((spec, i) => {
   svg("circle", { cx: x, cy: y, r: r + 2, class: "node-ring" }, group);
   svg("circle", { cx: x, cy: y, r: r + 1, class: "ambient-ring", style: `--period:${17 + i * 1.73}s;--phase:-${i * 3.19}s` }, group);
 
-  // Discovery label: positioned outside the circular artwork icon to prevent obstruction
+  // Discovery label
   const labelGroup = svg("g", { class: "node-label", "aria-hidden": "true" }, group);
   const textEl = svg("text", {
     x: lx,
@@ -97,7 +208,6 @@ const tracks = specs.map((spec, i) => {
   }, group);
 
   const length = path.getTotalLength();
-  // Cache geometry once: no SVG path measurement in the animation loop
   const points = Array.from({ length: 181 }, (_, n) => path.getPointAtLength(length * n / 180));
   const track = { id, name, url, path, group, x, y, r, length, points, weight: random(0.65, 1.4), last: -20000, hover: false, focus: false };
 
@@ -158,6 +268,100 @@ const tracks = specs.map((spec, i) => {
 
   return track;
 });
+
+let currentLayoutMode = initialMode;
+let layoutRevision = 0;
+
+async function applyLayout() {
+  const mode = getActiveMode();
+  const layout = LAYOUTS[mode];
+  const changed = mode !== currentLayoutMode;
+  if (changed) {
+    const revision = ++layoutRevision;
+    await prepareArtwork(layout.artwork.src);
+    if (revision !== layoutRevision || getActiveMode() !== mode) return;
+    currentLayoutMode = mode;
+  }
+  syncArtworkFrame(mode, layout);
+  if (!changed) return;
+
+  if (core) {
+    core.setAttribute("x", layout.core.x);
+    core.setAttribute("y", layout.core.y);
+    core.setAttribute("width", layout.core.width);
+    core.setAttribute("height", layout.core.height);
+    core.setAttribute("rx", layout.core.rx);
+  }
+
+  tracks.forEach(track => {
+    const spec = layout.specs.find(s => s.id === track.id);
+    if (!spec) return;
+
+    track.x = spec.x;
+    track.y = spec.y;
+    track.r = spec.r;
+    track.path.setAttribute("d", spec.d);
+
+    const halo = track.group.querySelector(".halo");
+    if (halo) {
+      halo.setAttribute("cx", spec.x);
+      halo.setAttribute("cy", spec.y);
+      halo.setAttribute("r", spec.r + 5);
+    }
+
+    const ring = track.group.querySelector(".node-ring");
+    if (ring) {
+      ring.setAttribute("cx", spec.x);
+      ring.setAttribute("cy", spec.y);
+      ring.setAttribute("r", spec.r + 2);
+    }
+
+    const amb = track.group.querySelector(".ambient-ring");
+    if (amb) {
+      amb.setAttribute("cx", spec.x);
+      amb.setAttribute("cy", spec.y);
+      amb.setAttribute("r", spec.r + 1);
+    }
+
+    const text = track.group.querySelector(".node-label-text");
+    if (text) {
+      text.setAttribute("x", spec.lx);
+      text.setAttribute("y", spec.ly);
+      text.setAttribute("text-anchor", spec.anchor);
+    }
+
+    const hit = track.group.querySelector(".hit");
+    if (hit) {
+      hit.setAttribute("cx", spec.x);
+      hit.setAttribute("cy", spec.y);
+      hit.setAttribute("r", spec.r + 9);
+      hit.setAttribute("aria-label", getNodeAriaLabel(track.id, spec.name));
+    }
+
+    track.length = track.path.getTotalLength();
+    track.points = Array.from({ length: 181 }, (_, n) => track.path.getPointAtLength(track.length * n / 180));
+  });
+
+  packets.forEach(p => p.g.remove());
+  responses.forEach(p => p.el.remove());
+  packets = [];
+  responses = [];
+}
+
+let layoutFrame = 0;
+function scheduleLayout() {
+  if (layoutFrame) return;
+  layoutFrame = requestAnimationFrame(() => {
+    layoutFrame = 0;
+    applyLayout().catch(error => console.error("Unable to load the selected Synaptic artwork.", error));
+  });
+}
+
+const portraitMedia = window.matchMedia("(orientation: portrait)");
+if (typeof portraitMedia.addEventListener === "function") portraitMedia.addEventListener("change", scheduleLayout);
+else portraitMedia.addListener(scheduleLayout);
+window.addEventListener("orientationchange", scheduleLayout, { passive: true });
+window.addEventListener("resize", scheduleLayout, { passive: true });
 
 let packets = [];
 let responses = [];
@@ -248,7 +452,7 @@ function frame(now) {
   lastFrame = now;
   const target = coreHover || coreFocus || now < touchUntil ? 1 : 0;
   activity += (target - activity) * (1 - Math.exp(-dt / (target ? 3200 : 5500)));
-  scene.style.setProperty("--activity", activity.toFixed(3));
+  if (scene) scene.style.setProperty("--activity", activity.toFixed(3));
 
   if (pendingReturn && now > pendingReturn.expires) pendingReturn = null;
   if (pendingReturn && now >= pendingReturn.at && launch(pendingReturn.track, true, now)) {
@@ -317,7 +521,7 @@ function stop() {
   responses = [];
   pendingReturn = null;
   activity = 0;
-  scene.style.setProperty("--activity", "0");
+  if (scene) scene.style.setProperty("--activity", "0");
 }
 
 function returnHome() {
@@ -325,39 +529,31 @@ function returnHome() {
   window.scrollTo({ top: 0, behavior: reduced.matches ? "auto" : "smooth" });
 }
 
-core.addEventListener("pointerenter", () => {
-  coreHover = true;
-});
-core.addEventListener("pointerleave", () => {
-  coreHover = false;
-});
-core.addEventListener("focus", () => {
-  coreFocus = true;
-});
-core.addEventListener("blur", () => {
-  coreFocus = false;
-});
-core.addEventListener("click", () => {
-  returnHome();
-});
-core.addEventListener("keydown", e => {
-  if (e.key === "Enter" || e.key === " ") {
-    e.preventDefault();
+if (core) {
+  core.addEventListener("pointerenter", () => {
+    coreHover = true;
+  });
+  core.addEventListener("pointerleave", () => {
+    coreHover = false;
+  });
+  core.addEventListener("focus", () => {
+    coreFocus = true;
+  });
+  core.addEventListener("blur", () => {
+    coreFocus = false;
+  });
+  core.addEventListener("click", () => {
     returnHome();
-  }
-});
+  });
+  core.addEventListener("keydown", e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      returnHome();
+    }
+  });
+}
 
-window.addEventListener("pointermove", e => {
-  if (reduced.matches || e.pointerType === "touch") return;
-  scene.style.setProperty("--x", `${(e.clientX / innerWidth - 0.5) * 3}px`);
-  scene.style.setProperty("--y", `${(e.clientY / innerHeight - 0.5) * 2}px`);
-});
-
-document.addEventListener("pointerleave", () => {
-  coreHover = false;
-  scene.style.setProperty("--x", "0px");
-  scene.style.setProperty("--y", "0px");
-});
+document.addEventListener("pointerleave", () => { coreHover = false; });
 
 reduced.addEventListener("change", () => {
   stop();
@@ -372,16 +568,17 @@ document.addEventListener("visibilitychange", () => {
 start();
 
 function updateSynapticLanguage() {
+  const activeLayout = LAYOUTS[getActiveMode()];
   document.querySelectorAll(".node-label-text[data-node-id]").forEach(el => {
     const id = el.getAttribute("data-node-id");
-    const spec = specs.find(s => s.id === id);
+    const spec = activeLayout.specs.find(s => s.id === id);
     if (spec) {
       el.textContent = getNodeTranslation(id, spec.name);
     }
   });
   document.querySelectorAll(".hit[data-target]").forEach(el => {
     const id = el.getAttribute("data-target");
-    const spec = specs.find(s => s.id === id);
+    const spec = activeLayout.specs.find(s => s.id === id);
     if (spec) {
       el.setAttribute("aria-label", getNodeAriaLabel(id, spec.name));
     }
