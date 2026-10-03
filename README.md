@@ -130,17 +130,9 @@ src/i18n.js
 
 The selected language is persisted locally in the browser.
 
-## Content source
-
-The canonical Portuguese portfolio copy is maintained in:
-
-```text
-docs/portfolio-copy.md
-```
-
 ## Public content policy
 
-This repository is intentionally public and contains only portfolio-safe material.
+This repository is intentionally public and contains only portfolio-safe material. Runtime portfolio copy and translations are kept in the application source; internal planning notes and editorial guidance are not part of the public repository.
 
 It must not contain:
 
@@ -162,3 +154,9 @@ https://github.com/Jetferrari
 LinkedIn:
 
 https://www.linkedin.com/in/jf11
+
+## Rights and reuse
+
+Copyright 2026 Jeterson Ferrari. All rights reserved.
+
+No license is granted for copying, redistribution, derivative works, or commercial reuse of the portfolio source and visual assets except where required by applicable law. See `NOTICE.md`.
