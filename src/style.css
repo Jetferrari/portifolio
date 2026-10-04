@@ -1702,22 +1702,22 @@ body.nav-locked {
 
 
 /* Desktop ultra-wide ambient extension for the Synaptic Home.
-   Keeps the approved 1672:941 artwork undistorted while blending the
-   unused viewport sides into the same visual environment. */
+   The artwork keeps its approved geometry; its outer edges are feathered
+   into a darker duplicate backdrop so wide screens do not show hard bands. */
 @media (orientation: landscape) and (min-width: 900px) {
   body.home-body {
     position: relative;
-    background: #020f0e;
+    background: #010908;
   }
 
   body.home-body::before {
     content: "";
     position: fixed;
-    inset: -32px;
+    inset: -40px;
     background: url("/network.png") center / cover no-repeat;
-    filter: blur(24px) brightness(0.38) saturate(0.82);
-    opacity: 0.72;
-    transform: scale(1.04);
+    filter: blur(30px) brightness(0.22) saturate(0.72);
+    opacity: 0.44;
+    transform: scale(1.06);
     pointer-events: none;
     z-index: 0;
   }
@@ -1726,12 +1726,29 @@ body.nav-locked {
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(1, 16, 15, 0.24);
+    background: rgba(1, 8, 7, 0.34);
     pointer-events: none;
     z-index: 0;
   }
 
   .home-main {
     z-index: 1;
+  }
+
+  .scene {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      #000 7%,
+      #000 93%,
+      transparent 100%
+    );
   }
 }
