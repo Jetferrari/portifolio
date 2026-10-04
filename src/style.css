@@ -1699,3 +1699,39 @@ body.nav-locked {
 @media(max-width:860px){.prompt-governance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.prompt-workflow{grid-template-columns:1fr;border-top:0;border-left:1px solid rgba(180,233,220,.18);margin-left:8px}.prompt-workflow-step{padding:8px 0 28px 24px}.prompt-workflow-step:not(:last-child)::after{top:auto;bottom:10px;right:auto;left:-4px;transform:rotate(135deg)}.prompt-dual-section{grid-template-columns:1fr}}
 @media(max-width:580px){.prompt-governance-grid{grid-template-columns:1fr}.prompt-governance-card{min-height:0}.prompt-case summary{grid-template-columns:34px minmax(0,1fr) 24px;gap:10px;padding:20px 0}.prompt-case-body{padding:0 0 26px 44px}.prompt-case-meta{flex-direction:column;gap:5px}.prompt-dual-card{padding:20px}.prompt-doc-cta{align-items:flex-start;padding:20px}.prompt-closing-desc{margin-left:0}}
 @media(prefers-reduced-motion:reduce){.prompt-case-toggle,.prompt-doc-cta{transition:none}}
+
+
+/* Desktop ultra-wide ambient extension for the Synaptic Home.
+   Keeps the approved 1672:941 artwork undistorted while blending the
+   unused viewport sides into the same visual environment. */
+@media (orientation: landscape) and (min-width: 900px) {
+  body.home-body {
+    position: relative;
+    background: #020f0e;
+  }
+
+  body.home-body::before {
+    content: "";
+    position: fixed;
+    inset: -32px;
+    background: url("/network.png") center / cover no-repeat;
+    filter: blur(24px) brightness(0.38) saturate(0.82);
+    opacity: 0.72;
+    transform: scale(1.04);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body.home-body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(1, 16, 15, 0.24);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .home-main {
+    z-index: 1;
+  }
+}
