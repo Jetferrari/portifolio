@@ -160,3 +160,5 @@ https://www.linkedin.com/in/jf11
 Copyright 2026 Jeterson Ferrari. All rights reserved.
 
 No license is granted for copying, redistribution, derivative works, or commercial reuse of the portfolio source and visual assets except where required by applicable law. See `NOTICE.md`.
+
+- `/prompt-engineering`
