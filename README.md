@@ -153,7 +153,7 @@ https://github.com/Jetferrari
 
 LinkedIn:
 
-https://www.linkedin.com/in/jf11
+https://www.linkedin.com/in/jetferrari
 
 ## Rights and reuse
 
